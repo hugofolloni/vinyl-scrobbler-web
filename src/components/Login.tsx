@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { t } from '../i18n';
 
 interface LoginProps {
   onLogin: () => void;
@@ -121,9 +122,9 @@ export function Login({ onLogin }: LoginProps) {
   return (
     <div className="hero-section">
       <div className="hero-text">
-        <h1 className="hero-title">O ritual do vinil no seu Last.fm</h1>
+        <h1 className="hero-title">{t('heroTitle')}</h1>
         <p className="hero-subtitle">
-          Encontre o seu disco na nossa base, desça a agulha e deixe o <strong>vinylscrobbler</strong> registrar automaticamente sua audição analógica no seu perfil digital.
+          {t('heroSubtitle')}
         </p>
       </div>
 
@@ -149,7 +150,7 @@ export function Login({ onLogin }: LoginProps) {
         </div>
 
         <button onClick={onLogin} className="btn-primary login-btn">
-          Conectar com Last.fm
+          {t('connectButton')}
         </button>
       </div>
     </div>

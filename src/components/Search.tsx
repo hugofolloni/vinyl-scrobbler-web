@@ -1,4 +1,5 @@
 import type { SearchResultItem } from '../types';
+import { t } from '../i18n';
 
 interface SearchProps {
   searchTerm: string;
@@ -12,16 +13,16 @@ interface SearchProps {
 export function Search({ searchTerm, onSearchChange, loading, showDropdown, results, onSelectAlbum }: SearchProps) {
   return (
     <div className="search-wrapper">
-      <h2>Qual vinil você vai ouvir agora?</h2>
+      <h2>{t('searchTitle')}</h2>
       <input
         type="text"
         className="search-input"
-        placeholder="Busque pelo título do álbum..."
+        placeholder={t('searchPlaceholder')}
         value={searchTerm}
         onChange={(e) => onSearchChange(e.target.value)}
       />
       
-      {loading && <p className="search-loading">Buscando no banco de dados...</p>}
+      {loading && <p className="search-loading">{t('searching')}</p>}
 
       {showDropdown && results.length > 0 && (
         <ul className="results-list">

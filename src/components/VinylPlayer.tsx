@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import type { AlbumDetails, AppState } from '../types';
+import { t } from '../i18n';
 
 interface VinylPlayerProps {
   album: AlbumDetails | null;
@@ -93,20 +94,16 @@ export function VinylPlayer({
 
             {appState === 'CONFIRMING' && (
               <div className="action-buttons-container">
-                <button onClick={onStartScrobble} className="btn-primary">
-                  Tocar Disco
-                </button>
-                <button onClick={onReset} className="btn-secondary">
-                  Cancelar
-                </button>
+                <button onClick={onStartScrobble} className="btn-primary">{t('playButton')}</button>
+                <button onClick={onReset} className="btn-secondary">{t('cancelButton')}</button>
               </div>
             )}
 
             {appState === 'FINISHED' && (
               <div className="action-buttons-container">
-                <p className="success-message">Álbum registrado no Last.fm</p>
+                <p className="success-message">{t('successMsg')}</p>
                 <button onClick={() => window.open(`https://www.last.fm/user/${username}`, '_blank')} className="btn-secondary border-accent text-white">
-                  Ver no Perfil
+                  {t('viewProfile')}
                 </button>
                 <button onClick={onReset} className="btn-secondary">
                   Scrobbler outro disco
@@ -122,7 +119,7 @@ export function VinylPlayer({
           <h3 className="tracklist-title">Tracklist</h3>
           <ul className="tracklist">
             {album.tracks.map((track, idx) => {
-              const trackName = track.name || 'Faixa Desconhecida';
+              const trackName = track.name || t('unknownTrack');
               const duration = track.durationInSeconds || 0;
               let isCurrent = false;
               let trackStatusClass = 'track-upcoming';

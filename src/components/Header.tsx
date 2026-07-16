@@ -1,3 +1,5 @@
+import { t } from '../i18n';
+
 interface HeaderProps {
   username: string | null;
   onLogout: () => void;
@@ -8,8 +10,8 @@ export function Header({ username, onLogout }: HeaderProps) {
     <header className="header-wrapper">
       <div className="brand-logo">vinylscrobbler</div>
       <div className="user-info">
-        <span>Logado como: <strong>{username}</strong></span>
-        <button className="btn-logout" onClick={onLogout}>Sair</button>
+        <span>{t('loggedInAs')} <strong>{username}</strong></span>
+        <button className="btn-logout" onClick={onLogout}>{t('signOut')}</button>
       </div>
     </header>
   );

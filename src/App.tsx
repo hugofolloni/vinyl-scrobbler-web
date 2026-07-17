@@ -5,6 +5,7 @@ import { Login } from './components/Login';
 import { Header } from './components/Header';
 import { Search } from './components/Search';
 import { VinylPlayer } from './components/VinylPlayer';
+import { Footer } from './components/Footer'
 import './index.css';
 
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:5010';
@@ -226,6 +227,8 @@ export default function App() {
           />
         </>
       )}
+
+      <Footer/>
     </div>
   );
 }

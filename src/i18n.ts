@@ -16,7 +16,8 @@ const translations = {
     viewProfile: "Ver no Perfil",
     scrobbleAnother: "Scrobblar outro disco",
     errDetails: "Não foi possível carregar os detalhes:",
-    errScrobble: "Falha ao registrar scrobble:"
+    errScrobble: "Falha ao registrar scrobble:",
+    footer: "Criado por @hugofolloni"
   },
   en: {
     loggedInAs: "Logged in as:",
@@ -35,7 +36,8 @@ const translations = {
     viewProfile: "View on Profile",
     scrobbleAnother: "Scrobble another record",
     errDetails: "Could not load details:",
-    errScrobble: "Failed to scrobble:"
+    errScrobble: "Failed to scrobble:",
+    footer: "Created by @hugofolloni"
   }
 };
 

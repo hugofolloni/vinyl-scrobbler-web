@@ -9,9 +9,14 @@ export function Header({ username, onLogout }: HeaderProps) {
   return (
     <header className="header-wrapper">
       <div className="brand-logo">vinylscrobbler</div>
+      
       <div className="user-info">
-        <span>{t('loggedInAs')} <strong>{username}</strong></span>
-        <button className="btn-logout" onClick={onLogout}>{t('signOut')}</button>
+        <span className="user-text">
+          {t('loggedInAs')} <strong>{username}</strong>
+        </span>
+        <button className="btn-logout" onClick={onLogout}>
+          {t('signOut')}
+        </button>
       </div>
     </header>
   );

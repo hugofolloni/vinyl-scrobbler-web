@@ -24,11 +24,14 @@ body {
   min-height: 92vh;
 }
 
+
 .header-wrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 1rem 0;
   margin-bottom: 2rem;
+  width: 100%;
 }
 
 .footer {
@@ -57,6 +60,13 @@ body {
   display: flex;
   align-items: center;
   gap: 1.5rem;
+}
+
+.user-text {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  text-align: right;
+  white-space: nowrap;
 }
 
 .btn-logout {
@@ -600,4 +610,10 @@ body {
     width: 25rem;
   }
   
+}
+
+@media (max-width: 500px) {
+  .user-text {
+    display: none;
+  }
 }

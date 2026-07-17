@@ -80,7 +80,11 @@ export default function App() {
   const fetchSearchResults = async (query: string) => {
     setLoadingSearch(true);
     try {
-      const response = await axios.get(`${API_BASE_URL}/api/album/search?q=${encodeURIComponent(query)}`);
+      const response = await axios.get(`${API_BASE_URL}/api/album/search?q=${encodeURIComponent(query)}`, {
+        headers: {
+          'ngrok-skip-browser-warning': 'true'
+        }
+      });
       setSearchResults(response.data);
       setShowDropdown(true);
     } catch (err) {
@@ -144,7 +148,11 @@ export default function App() {
     setSearchTerm('');
     
     try {
-      const response = await axios.get(`${API_BASE_URL}/api/album/info?artist=${encodeURIComponent(artist)}&album=${encodeURIComponent(albumName)}`);
+      const response = await axios.get(`${API_BASE_URL}/api/album/info?artist=${encodeURIComponent(artist)}&album=${encodeURIComponent(albumName)}`, {
+        headers: {
+          'ngrok-skip-browser-warning': 'true'
+        }
+      });
       setSelectedAlbum(response.data);
       setCurrentTrackIndex(0);
       setIsPlaying(false);
@@ -204,7 +212,7 @@ export default function App() {
       ) : (
         <>
           <Header username={username} onLogout={handleLogout} />
-          
+
           {appState !== 'SCROBBLING' && (
             <Search 
               searchTerm={searchTerm} 

@@ -126,7 +126,7 @@ export function VinylPlayer({
 
               if (appState === 'CONFIRMING') {
                 trackStatusClass = 'track-confirming';
-              } else if (idx < currentTrackIndex) {
+              } else if (appState === 'FINISHED' || idx < currentTrackIndex) {
                 trackStatusClass = 'track-played';
               } else if (idx === currentTrackIndex && isPlaying) {
                 trackStatusClass = 'track-current';

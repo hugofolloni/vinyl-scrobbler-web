@@ -106,7 +106,7 @@ export function VinylPlayer({
                   {t('viewProfile')}
                 </button>
                 <button onClick={onReset} className="btn-secondary">
-                  Scrobbler outro disco
+                  {t('scrobbleAnother')}
                 </button>
               </div>
             )}
